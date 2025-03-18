@@ -5,7 +5,15 @@ console.log(randomNumber)
 document.getElementById("form").addEventListener("submit", function (event) {
     event.preventDefault(); 
 
+    
     let numero = parseInt(document.getElementById("numero").value); 
+
+    let conteggio = parseInt(document.getElementById("conteggio").value);
+    if (isNaN(conteggio)) {
+        conteggio = 0;
+    }
+    conteggio++;
+    document.getElementById("conteggio").value = conteggio;
 
     let indovina = () => {
         if (numero === randomNumber) {
