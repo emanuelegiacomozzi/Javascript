@@ -17,15 +17,16 @@ let job2 = () =>{
     });
 }
 
-let promise = job1();
 
-promise.then((data1)=>{
-    console.log("data1", data1);
-    return "hello world"
-}).then((data2)=>{
-    console.log("data2", data2);
-    return job2()
-}).then((data3)=>{
-    console.log("data3", data3);
-});
+
+job1().then((x)=>{
+    console.log(x);
+    return "hello world";
+}).then((x)=>{
+    console.log(x);
+    return job2();
+}).then((x)=>{
+    console.log(x);
+    })
+
 

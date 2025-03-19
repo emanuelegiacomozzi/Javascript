@@ -6,7 +6,7 @@ let x = new Promise((resolve, reject) => {
     let esito = true;
     if(esito){
         setTimeout(() =>{
-            resolve("Ciao mondo!");
+            resolve(job());
         }, 2000)
     }else{
         reject("errore nella chiamata");
@@ -19,4 +19,3 @@ x.then((dati)=>{
     console.log(err);
 });
 
-console.log(job());
