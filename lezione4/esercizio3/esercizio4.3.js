@@ -8,12 +8,12 @@ document.getElementById("form").addEventListener("submit", function (event) {
     
     let numero = parseInt(document.getElementById("numero").value); 
 
-    let conteggio = parseInt(document.getElementById("conteggio").value);
+    let conteggio = parseInt(document.getElementById("conteggio").textContent);
     if (isNaN(conteggio)) {
         conteggio = 0;
     }
     conteggio++;
-    document.getElementById("conteggio").value = conteggio;
+    document.getElementById("conteggio").textContent = conteggio;
 
     let indovina = () => {
         if (numero === randomNumber) {
@@ -50,7 +50,7 @@ document.querySelectorAll("input[type='submit']")[1].addEventListener("click", f
     event.preventDefault();
 
     document.getElementById("numero").value = "";
-    document.getElementById("conteggio").value = "";
+    document.getElementById("conteggio").textContent = "0";
     document.getElementById("indovinato").innerHTML = "";
     document.getElementById("maggiore").innerHTML = "";
     document.getElementById("minore").innerHTML = "";
@@ -61,4 +61,5 @@ document.querySelectorAll("input[type='submit']")[1].addEventListener("click", f
 
     randomNumber = Math.floor(Math.random()*101);
     console.log(randomNumber);
+
 });
